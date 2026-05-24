@@ -1,0 +1,68 @@
+[
+  {
+    "id": 1,
+    "user_id": 1,
+    "meter_reading_id": 1,
+    "units_consumed": 250,
+    "rate_per_unit": 6.5,
+    "amount": 1625,
+    "due_date": "2024-04-30",
+    "status": "paid",
+    "bill_date": "2024-04-05"
+  },
+  {
+    "id": 2,
+    "user_id": 2,
+    "meter_reading_id": 2,
+    "units_consumed": 180,
+    "rate_per_unit": 6.5,
+    "amount": 1170,
+    "due_date": "2024-04-30",
+    "status": "paid",
+    "bill_date": "2024-04-05"
+  },
+  {
+    "id": 3,
+    "user_id": 3,
+    "meter_reading_id": 3,
+    "units_consumed": 350,
+    "rate_per_unit": 7,
+    "amount": 2450,
+    "due_date": "2024-04-30",
+    "status": "unpaid",
+    "bill_date": "2024-04-05"
+  },
+  {
+    "id": 4,
+    "user_id": 4,
+    "meter_reading_id": 4,
+    "units_consumed": 140,
+    "rate_per_unit": 6.5,
+    "amount": 910,
+    "due_date": "2024-04-30",
+    "status": "unpaid",
+    "bill_date": "2024-04-05"
+  },
+  {
+    "id": 5,
+    "user_id": 1,
+    "meter_reading_id": 5,
+    "units_consumed": 250,
+    "rate_per_unit": 6.5,
+    "amount": 1625,
+    "due_date": "2024-05-31",
+    "status": "unpaid",
+    "bill_date": "2024-05-05"
+  },
+  {
+    "id": 6,
+    "user_id": 2,
+    "meter_reading_id": 6,
+    "units_consumed": 170,
+    "rate_per_unit": 6.5,
+    "amount": 1105,
+    "due_date": "2024-05-31",
+    "status": "unpaid",
+    "bill_date": "2024-05-05"
+  }
+]

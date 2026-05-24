@@ -1,0 +1,56 @@
+═══════════════════════════════════════════════════════════════════
+   HOW TO CONNECT TO A DATABASE ON ANOTHER LAPTOP
+═══════════════════════════════════════════════════════════════════
+
+Your app already has MySQL support. You just need to change ONE line.
+
+STEP 1 — Find the other laptop's IP address
+───────────────────────────────────────────
+On the OTHER laptop (where MySQL is running):
+
+  Windows:  Open CMD → type: ipconfig
+            Look for "IPv4 Address" → e.g. 192.168.1.105
+
+  Mac/Linux: Open Terminal → type: ip addr  OR  hostname -I
+
+STEP 2 — Edit backend/.env on THIS laptop
+──────────────────────────────────────────
+Open  backend/.env  and change:
+
+  DB_HOST=localhost          ← Change this
+  DB_HOST=192.168.1.105      ← To the other laptop's IP
+
+STEP 3 — Allow remote connections on the OTHER laptop's MySQL
+─────────────────────────────────────────────────────────────
+On the OTHER laptop, open MySQL and run:
+
+  CREATE USER 'root'@'%' IDENTIFIED BY 'your_password';
+  GRANT ALL PRIVILEGES ON smartelectricity.* TO 'root'@'%';
+  FLUSH PRIVILEGES;
+
+  Then edit my.cnf (Linux/Mac) or my.ini (Windows) and set:
+    bind-address = 0.0.0.0
+
+  Restart MySQL service after this.
+
+STEP 4 — Make sure both laptops are on the SAME Wi-Fi
+──────────────────────────────────────────────────────
+Both laptops must be on the same network (e.g. same Wi-Fi hotspot
+or router). If using Windows Firewall, allow port 3306 through.
+
+STEP 5 — Test connection
+─────────────────────────
+From THIS laptop's terminal:
+  mysql -h 192.168.1.105 -u root -p smartelectricity
+
+If it connects, your app will too.
+
+═══════════════════════════════════════════════════════════════════
+   QUICK SUMMARY
+═══════════════════════════════════════════════════════════════════
+1. Get other laptop's IP (ipconfig / hostname -I)
+2. Change DB_HOST in backend/.env to that IP
+3. On other laptop: GRANT ALL PRIVILEGES and set bind-address=0.0.0.0
+4. Both on same Wi-Fi
+5. Done!
+═══════════════════════════════════════════════════════════════════

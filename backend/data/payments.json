@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "bill_id": 1,
+    "user_id": 1,
+    "amount": 1625,
+    "payment_date": "2024-04-20",
+    "payment_mode": "UPI",
+    "transaction_id": "TXN20240420A"
+  },
+  {
+    "id": 2,
+    "bill_id": 2,
+    "user_id": 2,
+    "amount": 1170,
+    "payment_date": "2024-04-22",
+    "payment_mode": "Net Banking",
+    "transaction_id": "TXN20240422B"
+  }
+]
